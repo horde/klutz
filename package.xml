@@ -12,8 +12,8 @@
  </lead>
  <date>2017-10-17</date>
  <version>
-  <release>1.0.0alpha1</release>
-  <api>1.0.0alpha1</api>
+  <release>2.0.0alpha1</release>
+  <api>2.0.0alpha1</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -21,7 +21,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
  <notes>
-* Initial release.
+* [jan] Add Latvian translation (Jānis Eisaks).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -238,17 +238,15 @@
  <changelog>
   <release>
    <version>
-    <release>1.0.0alpha1</release>
-    <api>1.0.0alpha1</api>
-   </version>
+    <release>2.0.0alpha1</release>
+    <api>2.0.0alpha1</api></version>
    <stability>
     <release>alpha</release>
-    <api>alpha</api>
-   </stability>
+    <api>alpha</api></stability>
    <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
-* Initial release.
+* [jan] Add Latvian translation (Jānis Eisaks).
    </notes>
   </release>
  </changelog>
