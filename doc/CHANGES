@@ -1,6 +1,6 @@
---------
-v2.0-git
---------
+----------------
+v2.0.0alpha1-git
+----------------
 
 [jan] Add Latvian translation (Jānis Eisaks).
 
@@ -23,13 +23,13 @@ v1.0
 [jan] Add Romanian translation (Eugen Hoanca <eugenh@urban-grafx.ro>).
 [mir] Add Jake the Rake, Something Positive
 [mir] When viewing a comic, the title is now a link to the comic's homepage.
-[mir] Updated day/comic navigation to allow moving to oldest and newest as
-      well as previous and next dates and to allow moving between comics
-      when viewing a comic at a time.
-[mir] Add Geech, The Born Loser, Andy Capp, and Gasoline Alley
-      ("Michael W. Jones" <mjones@otsc.com>)
-[mir] Added some headers to image display to encourage caching comics
-      (adapted from patch by Jon Knepher <jbk@wild-e.com>).
+[mir] Updated day/comic navigation to allow moving to oldest and newest as well
+      as previous and next dates and to allow moving between comics when
+      viewing a comic at a time.
+[mir] Add Geech, The Born Loser, Andy Capp, and Gasoline Alley ("Michael W.
+      Jones" <mjones@otsc.com>)
+[mir] Added some headers to image display to encourage caching comics (adapted
+      from patch by Jon Knepher <jbk@wild-e.com>).
 [mir] Added Oh My Gods! (Jon Knepher <jbk@wild-e.com>).
 [mir] Added Sherman's Lagoon (Zachariah Mully <zmully@smartbrief.com>).
 [jan] Add Czech translation (Pavel Chytil <pavel@chytil.tk>).
