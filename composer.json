@@ -1,8 +1,8 @@
 {
     "name": "horde/klutz",
-    "description": "Comic reader",
-    "type": "library",
-    "homepage": "https://pear.horde.org",
+    "description": "Comic reader application",
+    "type": "project",
+    "homepage": "https://www.horde.org/apps/klutz",
     "license": "GPL-2.0",
     "authors": [
         {
@@ -11,8 +11,8 @@
             "role": "lead"
         }
     ],
-    "version": "1.0.0alpha1",
-    "time": "2017-10-17",
+    "version": "2.0.0alpha1",
+    "time": "2017-11-11",
     "repositories": [
         {
             "type": "pear",
@@ -23,8 +23,8 @@
         "php": "^5.3"
     },
     "replace": {
-        "pear-pear.horde.org/klutz": "1.*",
-        "pear-horde/klutz": "1.*"
+        "pear-pear.horde.org/klutz": "2.*",
+        "pear-horde/klutz": "2.*"
     },
     "autoload": {
         "psr-0": {
