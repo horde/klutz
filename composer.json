@@ -1,7 +1,7 @@
 {
     "name": "horde/klutz",
     "description": "Comic reader application",
-    "type": "project",
+    "type": "horde-application",
     "homepage": "https://www.horde.org/apps/klutz",
     "license": "GPL-2.0",
     "authors": [
@@ -12,23 +12,24 @@
         }
     ],
     "version": "2.0.0alpha1",
-    "time": "2017-11-11",
+    "time": "2020-10-27",
     "repositories": [
         {
-            "type": "pear",
-            "url": "https://pear.horde.org"
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com"
         }
     ],
     "require": {
+        "horde/horde-installer-plugin": "dev-master",
         "php": "^5.3"
     },
-    "replace": {
-        "pear-pear.horde.org/klutz": "2.*",
-        "pear-horde/klutz": "2.*"
-    },
+    "suggest": {},
     "autoload": {
         "psr-0": {
             "Klutz": "lib/"
         }
-    }
+    },
+    "bin": [
+        "bin/klutz-fetch-comics"
+    ]
 }
