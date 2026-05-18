@@ -17,7 +17,7 @@
 <p class="item">
  <h1 class="smallheader"><?php echo _("Enter a description for this comic") ?></h1>
  <label for="description" class="hidden"><?php echo _("Description") ?></label>
- <textarea name="desc" rows="4" cols="40"><?php echo htmlspecialchars($comic->name . ' - ' . strftime('%B %d, %Y', $date)) ?></textarea>
+ <textarea name="desc" rows="4" cols="40"><?php echo htmlspecialchars($comic->name . ' - ' . \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')) ?></textarea>
 </p>
 <p class="item">
  <h1 class="smallheader"><?php _("Enter any tags for this image") ?></h1>

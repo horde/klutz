@@ -376,9 +376,9 @@ class Klutz_Comic
         }
 
         while (preg_match('/\{dow\((\d)\,\s*(.*?)\)\}/ie',$string,$dow) > 0) {
-            $s = strftime($dow[2], mktime(0, 0, 0, $d['mon'],
+            $s = \Horde\Date\Format::formatDate(mktime(0, 0, 0, $d['mon'],
                                           $d['mday'] - ($d['wday'] - $dow[1]),
-                                          $d['year']));
+                                          $d['year']), $dow[2], $GLOBALS['language'] ?? 'en_US');
 //            $s = strftime($dow[2], $date+3600-(86400*($d['wday'] - $dow[1])));
             $string = str_replace($dow[0], $s, $string);
         }
@@ -387,7 +387,7 @@ class Klutz_Comic
                                $string);
         $string = preg_replace_callback('/(?<![\134]\w)(\{[^\}]+\})/',
                                         function($time) use($date) {
-                                            return strftime($time[1], $date);
+                                            return \Horde\Date\Format::formatDate($date, $time[1], $GLOBALS['language'] ?? 'en_US');
                                         },
                                         $string);
         $string = preg_replace_callback('/\{lc\((.*?)\)\}/i',

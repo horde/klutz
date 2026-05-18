@@ -25,3 +25,9 @@ license:
 dependencies:
   required:
     php: ^5.3
+autoload:
+  classmap:
+    - lib/
+  psr-4:
+    Horde\Klutz\: /src
+vendor: horde

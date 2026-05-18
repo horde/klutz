@@ -96,7 +96,7 @@ if (count($mode) == 0 || in_array('menu', $mode)) {
             $selected = '';
         }
         $fetch_date_select .= '<option value="' . $date . '"' . $selected . '">' .
-            strftime('%B %d, %Y', $date) . '</option>';
+            \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US') . '</option>';
     }
     $fetch_date_select .= '</select>';
 
@@ -108,7 +108,7 @@ if (count($mode) == 0 || in_array('menu', $mode)) {
             $selected = '';
         }
         $delete_date_select .= '<option value="' . $date . '"' . $selected . '">' .
-            strftime("%B %d, %Y", $date) . '</option>';
+            \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US') . '</option>';
     }
     $delete_date_select .= '</select>';
 
@@ -203,10 +203,10 @@ if (in_array('fetch', $mode)) {
 
             if (!$today && $klutz->getProperty($comic, 'nohistory')) {
                 webPrint(sprintf(_("Skipping %s for %s - no historical fetching"),
-                                 $name, strftime("%B %d, %Y", $date)));
+                                 $name, \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')));
             } elseif ($overwrite || !$klutz_driver->imageExists($comic, $date)) {
                 webPrint(sprintf(_("Fetching %s for date %s..."),
-                                 $name, strftime('%B %d, %Y', $date)), true);
+                                 $name, \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')), true);
 
                 $c = $klutz->comicObject($comic);
                 $image = $c->fetchImage($date);
@@ -224,14 +224,14 @@ if (in_array('fetch', $mode)) {
                         webPrint(_("Done"));
                     } else {
                         $GLOBALS['notification']->push(sprintf(_("Fetching %s for date %s...Done"),
-                                                       $name, strftime('%B %d, %Y', $date)));
+                                                       $name, \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')));
                     }
                 } else {
                     webPrint(_("Error storing the image"));
                 }
             } else {
                 webPrint(sprintf(_("Skipping %s for %s"),
-                                 $name, strftime('%B %d, %Y', $date)));
+                                 $name, \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')));
             }
             webPrint("<br />\n");
         }
@@ -271,9 +271,9 @@ if (in_array('delete', $mode)) {
         }
         foreach ($dates as $date) {
             if ($klutz_driver->removeDate($date)) {
-                webPrint(sprintf($success, _("all comics"), strftime('%B %d, %Y', $date)));
+                webPrint(sprintf($success, _("all comics"), \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')));
             } else {
-                webPrint(sprintf($error, _("all comics"), strftime('%B %d, %Y', $date)));
+                webPrint(sprintf($error, _("all comics"), \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')));
             }
         }
     } else {
@@ -283,12 +283,12 @@ if (in_array('delete', $mode)) {
         foreach ($dates as $date) {
             if ($days == 'random' || in_array(Horde_String::lower(date('D', $date)), $days)) {
                 if (!$klutz_driver->imageExists($index, $date)) {
-                    webPrint(sprintf($notfound, $index, strftime('%B %d, %Y', $date)));
+                    webPrint(sprintf($notfound, $index, \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')));
                 } else {
                     if ($klutz_driver->removeImage($index, $date)) {
-                        webPrint(sprintf($success, $name, strftime('%B %d, %Y', $date)));
+                        webPrint(sprintf($success, $name, \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')));
                     } else {
-                        webPrint(sprintf($error, $name, strftime('%B %d, %Y', $date)));
+                        webPrint(sprintf($error, $name, \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US')));
                     }
                 }
             }
