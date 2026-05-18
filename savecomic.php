@@ -36,7 +36,7 @@ case 'save_comic':
     } else {
         $desc = Horde_Util::getFormData('desc', '');
         $image_data = array(
-            'filename' => $comic->name . '-' . strftime('%m%d%Y', $date) . '.' . str_replace('image/', '', $image->type), // Suggestions for better name?
+            'filename' => $comic->name . '-' . \Horde\Date\Format::formatDate($date, '%m%d%Y', $GLOBALS['language'] ?? 'en_US') . '.' . str_replace('image/', '', $image->type), // Suggestions for better name?
             'description' => $desc,
             'data' => $image->data,
             'type' => $image->type,

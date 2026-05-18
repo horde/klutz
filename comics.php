@@ -164,7 +164,7 @@ case 'main':
     break;
 
 case 'day':
-    $title = strftime('%B %d, %Y', $date);
+    $title = \Horde\Date\Format::formatDate($date, '%B %d, %Y', $GLOBALS['language'] ?? 'en_US');
 
     // Display the navbar.
     if (in_array($yesterday, $klutz_driver->listDates($yesterday))) {
