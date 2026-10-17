@@ -12,6 +12,9 @@ require_once 'MDB2.php';
  * @author  Florian Steinel <fsteinel@klutz.horde.flonet.net>
  * @package Klutz
  */
+
+use Horde\Klutz\KlutzConfig;
+
 class Klutz_Driver_Sql extends Klutz_Driver
 {
     /**
@@ -43,6 +46,8 @@ class Klutz_Driver_Sql extends Klutz_Driver
      */
     function Klutz_Driver_sql($params = array())
     {
+        $config = $injector->get('KlutzConfig');
+
         if (empty($params['basedir'])) {
             return null;
         }
@@ -53,9 +58,9 @@ class Klutz_Driver_Sql extends Klutz_Driver
         }
 
         /* Setup the database */
-        $config = $GLOBALS['conf']['sql'];
-        unset($config['charset']);
-        $this->_db = MDB2::factory($config);
+        $config_db = $config->get('sql']);
+        unset($config_db['charset']);
+        $this->_db = MDB2::factory($config_db);
         $this->_db->setOption('seqcol_name', 'id');
 
     }

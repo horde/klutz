@@ -6,6 +6,9 @@
  * @since   Klutz 0.1
  * @package Klutz
  */
+
+use Horde\Klutz\KlutzConfig;
+
 class Klutz_Driver
 {
     /**
@@ -23,8 +26,10 @@ class Klutz_Driver
      */
     function factory($driver = null, $params = null)
     {
+        $config = $injector->get('KlutzConfig');
+
         if (is_null($driver)) {
-            $driver = $GLOBALS['conf']['storage']['driver'];
+            $driver = $config->get('storage.driver']);
         }
         $driver = ucfirst(basename($driver));
 

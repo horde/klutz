@@ -5,6 +5,9 @@
  * @author Marcus I. Ryan <marcus@riboflavin.net>
  * @package Klutz
  */
+
+use Horde\Klutz\KlutzConfig;
+
 class Klutz_Comic
 {
     /**
@@ -246,10 +249,12 @@ class Klutz_Comic
      */
     function _initHTTP($date, $url)
     {
+        $config = $injector->get('KlutzConfig');
+
         if (is_null($this->http)) {
             $options = array();
-            if (isset($GLOBALS['conf']['http']['proxy']) && !empty($GLOBALS['conf']['http']['proxy']['proxy_host'])) {
-                $options = array_merge($options, $GLOBALS['conf']['http']['proxy']);
+            if (isset($config->get('http.proxy'])) && !empty($config->get('http.proxy.proxy_host']))) {
+                $options = array_merge($options, $config->get('http.proxy']));
             }
 
             require_once 'HTTP/Request.php';
