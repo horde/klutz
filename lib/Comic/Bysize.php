@@ -265,7 +265,7 @@ class Klutz_Comic_Bysize extends Klutz_Comic
         $this->http->setURL($url);
         $this->http->sendRequest();
 
-        $image = &new Klutz_Image($this->http->getResponseBody());
+        $image = new Klutz_Image($this->http->getResponseBody());
         if (is_null($image) || is_null($image->type)) {
             $image = false;
         }

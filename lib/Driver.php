@@ -29,7 +29,7 @@ class Klutz_Driver
         $config = $injector->get('KlutzConfig');
 
         if (is_null($driver)) {
-            $driver = $config->get('storage.driver']);
+            $driver = $config->get('storage.driver');
         }
         $driver = ucfirst(basename($driver));
 

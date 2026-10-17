@@ -58,7 +58,7 @@ class Klutz_Driver_Sql extends Klutz_Driver
         }
 
         /* Setup the database */
-        $config_db = $config->get('sql']);
+        $config_db = $config->get('sql');
         unset($config_db['charset']);
         $this->_db = MDB2::factory($config_db);
         $this->_db->setOption('seqcol_name', 'id');

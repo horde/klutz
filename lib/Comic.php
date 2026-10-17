@@ -253,8 +253,8 @@ class Klutz_Comic
 
         if (is_null($this->http)) {
             $options = array();
-            if (isset($config->get('http.proxy'])) && !empty($config->get('http.proxy.proxy_host']))) {
-                $options = array_merge($options, $config->get('http.proxy']));
+            if ((null !== $config->get('http.proxy')) && !empty($config->get('http.proxy.proxy_host'))) {
+                $options = array_merge($options, $config->get('http.proxy'));
             }
 
             require_once 'HTTP/Request.php';
